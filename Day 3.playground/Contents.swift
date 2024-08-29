@@ -45,3 +45,37 @@ print(scores.contains(2))
 let beatlesReversed = beatles.reversed()
 
 print(beatlesReversed)
+
+// Dictionaries
+
+let employee = [
+    "name": "Taylor Swift",
+    "job": "Singer",
+    "location": "Nashville"
+]
+
+print(employee["name", default: "Unknown"])
+
+let hasGraduated = [
+    "Eric": false,
+    "Maeve": true,
+    "Otis": false
+]
+
+let olympics = [
+    2012: "London",
+    2016: "Rio de Janiero",
+    2021: "Tokyo",
+    2024: "Paris"
+]
+
+print(olympics[2012, default: "Unknown"])
+
+var heights = [String: Int]()
+
+heights["Yao Ming"] = 229
+heights["LeBron James"] = 206
+
+// On ne peut pas avoir deux valeurs pour une même clé
+// Si on essaie d'attribuer deux valeurs différentes à une même clé,
+// Swift va simplement remplacer l'ancienne valeur par la nouvelle.
