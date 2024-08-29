@@ -79,3 +79,44 @@ heights["LeBron James"] = 206
 // On ne peut pas avoir deux valeurs pour une même clé
 // Si on essaie d'attribuer deux valeurs différentes à une même clé,
 // Swift va simplement remplacer l'ancienne valeur par la nouvelle.
+
+// Sets
+
+let actors = Set([
+    "Denzel Washington",
+    "Tom Cruise",
+    "Nicolas Cage",
+    "Samuel L Jackson"
+])
+
+print(actors)
+
+var newActors = Set<String>()
+newActors.insert("Denzel Washington")
+newActors.insert("Tom Cruise")
+newActors.insert("Nicolas Cage")
+newActors.insert("Samuel L Jackson")
+
+print(newActors)
+
+// Enumerations
+
+enum Weekday {
+    case monday
+    case tuesday
+    case wednesday
+    case thursday
+    case friday
+}
+
+var day = Weekday.monday
+day = Weekday.tuesday
+day = Weekday.thursday
+
+enum Mounths {
+    case january, february
+}
+
+var mounth = Mounths.february
+mounth = .january
+
