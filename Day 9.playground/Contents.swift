@@ -28,7 +28,7 @@ sayHelloAgain("Taylor")
 
 // var greetCopy: () -> Void = greetUser
 
-// En gros, les noms de paramètres, ne font pas parti de la fonction
+// En gros, les noms de paramètres, ne font pas parti du type de la fonction
 
 func getUserData(for id: Int) -> String {
     if id == 1989 {
