@@ -79,3 +79,35 @@ let captainFirstTeamWithClosure = team.sorted(by: { (name1: String, name2: Strin
 
 print(captainFirstTeamWithClosure)
 
+// How to use trailing closures and shorthand syntax
+
+let sorted = team.sorted { a, b in
+    if a == "Suzanne" {
+        return true
+    } else if b == "Suzanne" {
+        return false
+    }
+    return a < b
+}
+
+print(captainFirstTeam)
+
+let realSorted = team.sorted {
+    if $0 == "Suzanne" {
+        return true
+    } else if $1 == "Suzanne" {
+        return false
+    }
+    return $0 < $1
+}
+
+// Other uses of closures
+
+let tOnly = team.filter { $0.hasPrefix("T") }
+print(tOnly)
+
+let uppercaseTeam = team.map { $0.uppercased() }
+print(uppercaseTeam)
+
+// Avec map() par exemple on peut transformer un tableau de Int en tableau de String
+// Car avec map(), on n'est pas obligé de retourner le même type que l'on reçoit
