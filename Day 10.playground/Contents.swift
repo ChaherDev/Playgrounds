@@ -39,3 +39,42 @@ struct Employee {
 var archer = Employee(name: "Sterling Archer", vacationRemaining: 14)
 archer.takeVacation(days: 5)
 print(archer.vacationRemaining)
+
+// Propriétés calculées
+
+struct newEmployee {
+    let name: String
+    var vacationAllocated = 14
+    var vacationTaken = 0
+    
+    var vacationRemaining: Int {
+        vacationAllocated - vacationTaken
+    }
+}
+
+var newArcher = newEmployee(name: "Sterling Archer", vacationAllocated: 14)
+newArcher.vacationTaken += 4
+print(archer.vacationRemaining)
+newArcher.vacationTaken += 4
+print(archer.vacationRemaining)
+
+struct superEmployee {
+    let name: String
+    var vacationAllocated = 14
+    var vacationTaken = 0
+    
+    var vacationRemaining: Int {
+        get {
+            vacationAllocated - vacationTaken
+        }
+        
+        set {
+            vacationAllocated = vacationTaken + newValue
+        }
+    }
+}
+
+var superArcher = superEmployee(name: "Sterling Archer", vacationAllocated: 14)
+superArcher.vacationTaken += 4
+superArcher.vacationRemaining = 5
+print(superArcher.vacationAllocated)
