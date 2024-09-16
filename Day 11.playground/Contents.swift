@@ -61,4 +61,3 @@ struct Employee {
     
     static let example = Employee(username: "cdsfgfds", password: "fdsgerfwdced")
 }
-
