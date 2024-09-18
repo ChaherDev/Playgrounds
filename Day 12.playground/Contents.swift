@@ -102,3 +102,29 @@ user4.username = "Taylor"
 print(user3.username)
 print(user4.username)
 
+// Deinitializer for a class
+
+class AgainUser {
+    let id: Int
+    
+    init(id: Int) {
+        self.id = id
+        print("User \(id): I'm alive!")
+    }
+    
+    deinit {
+        print("User \(id): I'm dead!")
+    }
+}
+
+var users = [AgainUser]()
+
+for i in 1...3 {
+    let user = AgainUser(id: i)
+    print("User \(user.id): I'm in control!")
+    users.append(user)
+}
+
+print("Loop is finished!")
+users.removeAll()
+print("Array is clear!")
