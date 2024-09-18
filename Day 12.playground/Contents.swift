@@ -128,3 +128,14 @@ for i in 1...3 {
 print("Loop is finished!")
 users.removeAll()
 print("Array is clear!")
+
+// How to work with variables inside classes ?
+
+class UltimateUser {
+    var name = "Paul"
+}
+
+var ultimateUser = UltimateUser()
+ultimateUser.name = "Taylor"
+ultimateUser = UltimateUser()
+print(ultimateUser.name)
