@@ -78,9 +78,27 @@ class User {
 
 var user1 = User()
 var user2 = user1
-
 user2.username = "Taylor"
 
 print(user1.username)
 print(user2.username)
+
+// Deep copies
+
+class AnotherUser {
+    var username = "Anonymous"
+    
+    func copy() -> AnotherUser {
+        let anotherUser = AnotherUser()
+        anotherUser.username = username
+        return anotherUser
+    }
+}
+
+var user3 = AnotherUser()
+var user4 = user3.copy()
+user4.username = "Taylor"
+
+print(user3.username)
+print(user4.username)
 
