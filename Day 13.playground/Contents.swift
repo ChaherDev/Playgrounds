@@ -72,3 +72,57 @@ func getRandomBool() -> some Equatable {
     Bool.random()
 }
 
+// How to create and use extensions ?
+
+var quote = "     The truth is rarely pure and never simple     "
+let trimmed = quote.trimmingCharacters(in: .whitespacesAndNewlines)
+
+extension String {
+    func trimmed() -> String {
+        self.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+    
+    mutating func trim() {
+        self = self.trimmed()
+    }
+    
+    var lines: [String] {
+        self.components(separatedBy: .newlines)
+    }
+}
+
+var newQuote = "     The truth is rarely pure and never simple     "
+let newTrimmed = newQuote.trimmed()
+
+newQuote.trim()
+
+// ed et ing quand on crée une méthode qui agit dans une nouvelle variables et non pas dans l'élément en lui même
+
+let lyrics = """
+fewikfre
+frefergg
+refggerf
+"""
+
+print(lyrics.lines.count)
+
+// Un cas pratique de l’utilité des extensions est lorsque nous voulons
+// à la fois créer notre propre initialisateur tout en ayant
+// l’initialisateur par défaut des structures disponible.
+// Dans ce cas, on crée notre initialisateur dans une extension de notre structure.
+
+struct Book {
+    let title: String
+    let pageCount: Int
+    let readingHours: Int
+}
+
+extension Book {
+    init(title: String, pageCount: Int) {
+        self.title = title
+        self.pageCount = pageCount
+        self.readingHours = pageCount / 50
+    }
+}
+
+let lotr = Book(title: "Lord of the Rings", pageCount: 4, readingHours: 24)
