@@ -126,3 +126,38 @@ extension Book {
 }
 
 let lotr = Book(title: "Lord of the Rings", pageCount: 4, readingHours: 24)
+
+// How to create and use protocol extensions ?
+// Protocol Oriented Programming
+
+extension Collection {
+    var isNotEmpty: Bool {
+        isEmpty == false
+    }
+}
+
+// Cette extention est utilisée dans beaucoup de projets
+
+let guests = ["Mario", "Luigi", "Peach"]
+
+if !guests.isEmpty {
+    print("Guest count: \(guests.count)")
+}
+
+protocol Person {
+    var name: String { get }
+    func sayHello()
+}
+
+extension Person {
+    func sayHello() {
+        print("Hi, I'm \(name)")
+    }
+}
+
+struct Employee: Person {
+    let name: String
+}
+
+let taylor = Employee(name: "Taylor Swift")
+taylor.sayHello()
