@@ -73,3 +73,18 @@ let input = ""
 let againNumber = Int(input) ?? 0
 print(againNumber)
 
+// How to handle multiple optionals using optional chaining ?
+
+let names = ["Arya", "Bran", "Robb", "Sansa"]
+let chosen = names.randomElement()?.uppercased() ?? "No one"
+
+print("Next in line: \(chosen)")
+
+struct BookAgain {
+    let title: String
+    let author: String?
+}
+
+var bookAgain: BookAgain? = nil
+let authorAgain = bookAgain?.author?.first?.uppercased() ?? "A"
+print(author)
